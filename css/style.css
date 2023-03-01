@@ -28,7 +28,8 @@ a {
 }
 
 .btn_connect {
-    background-color: #6fc561
+    background-color: #6fc561;
+    font-size: 24px;
 }
 
 .btn_min {
@@ -82,14 +83,14 @@ a {
 .header__links {
     display: flex;
     align-items: center;
-    font-size: 25px;
+    font-size: 28px;
 }
 
 .header__link {
     position: relative;
     margin-right: 55px;
     font-weight: 700;
-    font-size: 23px;
+    font-size: 28px;
     color: #303030
 }
 
@@ -150,7 +151,7 @@ a {
 
 .preview__life {
     font-weight: 800;
-    font-size: 25px;
+    font-size: 40px;
     margin-left: 35px;
     margin-top: 45px;
     color: #57934d;
@@ -170,7 +171,7 @@ a {
 
 .tabcontainer {
     display: flex;
-    width: 1130px;
+    width: 1190px;
     margin: 0 auto;
     box-shadow: 0 4px 30px rgba(0, 0, 0, .25)
 }
@@ -201,7 +202,7 @@ a {
 }
 
 .tabheader {
-    width: 280px;
+    width: 340px;
     padding: 35px 30px;
     background-color: #fff
 }
@@ -219,8 +220,7 @@ a {
 
 .tabheader__item {
     font-weight: 700;
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 25px;
     margin-top: 10px;
     color: rgba(0, 0, 0, .6);
     cursor: pointer;
@@ -229,7 +229,7 @@ a {
 
 .tabheader__item_active {
     color: #000;
-    font-size: 22px;
+    font-size: 32px;
     font-weight: 700
 }
 
@@ -245,8 +245,9 @@ a {
 
 .offer .bgc_y {
     position: absolute;
-    width: 1409px;
-    height: 750px;
+    width:70vw;
+    height: 980px;
+    left: 0;
     background: rgba(216, 243, 170, 0.25);
     z-index: -1;
     top: 50px
@@ -256,23 +257,24 @@ a {
     position: absolute;
     right: 0;
     top: -155px;
-    width: 50vw;
-    height: 900px;
+    width: 70vw;
+    height: 1000px;
+    margin-left: 50px;
     background: rgba(146, 242, 255, .15);
     z-index: -1
 }
 
 
 .offer__text {
-    width: 580px;
+    width: 800px;
     color: #57934d;
 }
 
 .offer__descr {
-    font-size: 22px;
-    margin-top: 30px;
+    font-size: 35px;
+    margin-top: 20px;
     font-weight: 300;
-    line-height: 24px;
+    line-height: 40px;
     color: black;
 }
 
@@ -285,25 +287,27 @@ a {
 }
 
 .offer__advantages {
-    width: 340px;
+    width: 500px;
     margin-top: 40px;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 .offer__advantages h2 {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 30px;
     margin-top: 18px
 }
 
 .offer__advantages h2:first-child {
-    margin-top: 70px
+    margin-top: 70px;
+    font-size: 30px;
+
 }
 
 .offer__advantages-text {
-    font-size: 22px;
-    font-weight: 320;
-    line-height: 21px
+    font-size: 28px;
+    font-weight: 450;
+    line-height: 30px;
 }
 
 .offer__slider {
@@ -369,12 +373,12 @@ a {
     background: rgba(146, 242, 255, .15);
     padding: 30px 0 40px 0
 }
-
 .calculating__subtitle {
     text-align: center;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 30px
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 50px;
+    margin-right: 40px;
 }
 
 .calculating__subtitle:first-child {
@@ -396,7 +400,7 @@ a {
     position: relative;
     display: flex;
     margin-top: 30px;
-    justify-content: center
+    justify-content: center;
 }
 
 .calculating__choose-item {
@@ -410,7 +414,7 @@ a {
     box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
     border: none;
     text-align: center;
-    font-size: 14px;
+    font-size: 22px;
     cursor: pointer;
     outline: 0;
     transition: .3s all
@@ -445,17 +449,12 @@ a {
 }
 
 .calculating__total {
-    width: 490px;
-    margin: 0 auto;
-    display: flex;
+    width: 550px;
+    display: inline;
     justify-content: space-between;
     align-items: center
 }
 
-.calculating__result {
-    font-size: 18px;
-    font-weight: 700
-}
 
 .calculating__result span {
     font-size: 42px
@@ -499,9 +498,9 @@ a {
 
 .menu__item-subtitle {
     font-weight: 700;
-    font-size: 18px;
     padding: 0 20px;
-    margin-top: 20px
+    margin-top: 20px;
+    font-size: 30px;
 }
 
 .menu__item-descr {
@@ -513,14 +512,15 @@ a {
     width: 100%;
     height: 1px;
     background-color: rgba(0, 0, 0, .25);
-    margin-top: 50px
+    margin-top: 50px;
 }
 
 .menu__item-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px
+    padding: 10px 20px;
+    font-size: 26px;
 }
 
 .menu__item-price span {
@@ -541,7 +541,8 @@ a {
     padding: 0 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    font-size: 24px;
 }
 
 .order__form img {
@@ -585,14 +586,14 @@ a {
 
 .promotion__descr {
     margin-top: 40px;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 32px;
+    line-height: 32px;
     font-weight: 300
 }
 
 .promotion__descr span {
     font-weight: 700;
-    font-size: 26px
+    font-size: 35px
 }
 
 .promotion__timer {
@@ -616,7 +617,7 @@ a {
     height: 120px;
     background: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     text-align: center
 }

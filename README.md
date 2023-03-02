@@ -28,7 +28,7 @@ Small javascript project for food delivery menu
 git clone https://github.com/Lesash13/food_menu_javascript_app.git
 ```
 
-#### Start Chrome without cors policy:
+#### Start Chrome without CORS policy:
 ```
 chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 ```

@@ -33,7 +33,9 @@ a {
 }
 
 .btn_min {
-    height: 50px
+    height: 60px;
+    background-color: #6fc561;
+    font-size: 24px;
 }
 
 .btn:hover {
@@ -672,13 +674,13 @@ a {
 }
 
 .modal__dialog {
-    max-width: 500px;
+    max-width: 700px;
     margin: 40px auto
 }
 
 .modal__content {
     position: relative;
-    width: 100%;
+    width: 120%;
     padding: 40px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .2);
@@ -703,14 +705,14 @@ a {
 .modal__title {
     text-align: center;
     font-size: 22px;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 .modal__input {
     display: block;
     margin: 20px auto 20px auto;
-    width: 280px;
-    height: 50px;
+    width: 350px;
+    height: 60px;
     background: #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
     border: none;

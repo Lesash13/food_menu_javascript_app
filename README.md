@@ -11,6 +11,8 @@ Small javascript project for food delivery menu
 
 * [![Javascript][Javascript.io]][Javascript-url]
 * [![NodeJs][NodeJs.io]][NodeJs-url]
+* [![Babel][Babel.io]][Babel-url]
+
 
 ## Pre-installations
 
@@ -49,7 +51,7 @@ http://localhost:63342/food_menu/index.html
 
 [dependency-shield]: https://img.shields.io/badge/Dependency_Graph-darkgreen?style=for-the-badge
 
-[dependency-url]: https://github.com/Lesash13/angular-app/network/dependencies
+[dependency-url]: https://github.com/Lesash13/food_menu_javascript_app/network/dependencies
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=darkblue
 
@@ -63,3 +65,6 @@ http://localhost:63342/food_menu/index.html
 
 [NodeJs-url]: https://nodejs.org/en/
 
+[Babel.io]: https://img.shields.io/badge/-Babel-lightgrey?style=for-the-badge&logo=babel
+
+[Babel-url]:https://babeljs.io/

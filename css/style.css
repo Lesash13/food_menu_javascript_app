@@ -247,7 +247,7 @@ a {
 
 .offer .bgc_y {
     position: absolute;
-    width:70vw;
+    width:60vw;
     height: 980px;
     left: 0;
     background: rgba(216, 243, 170, 0.25);
@@ -259,7 +259,7 @@ a {
     position: absolute;
     right: 0;
     top: -155px;
-    width: 70vw;
+    width: 60vw;
     height: 1000px;
     margin-left: 50px;
     background: rgba(146, 242, 255, .15);
@@ -268,12 +268,12 @@ a {
 
 
 .offer__text {
-    width: 800px;
+    width: 600px;
     color: #57934d;
 }
 
 .offer__descr {
-    font-size: 35px;
+    font-size: 30px;
     margin-top: 20px;
     font-weight: 300;
     line-height: 40px;
@@ -674,7 +674,7 @@ a {
 }
 
 .modal__dialog {
-    max-width: 700px;
+    max-width: 500px;
     margin: 40px auto
 }
 

@@ -107,8 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //Modal window
 
     const modalTrigger = document.querySelectorAll('[data-modal]'),
-        modal = document.querySelector('.modal'),
-        modalCloseBtn = document.querySelector('[data-close]');
+        modal = document.querySelector('.modal');
 
     function openModal() {
         modal.classList.add('show');
@@ -129,10 +128,8 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    modalCloseBtn.addEventListener('click', closeModal)
-
     modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
+        if (event.target === modal || event.target.getAttribute('data-close') === '') {
             closeModal();
         }
     })
@@ -143,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    const modalTimerId = setTimeout(openModal, 10000)
+    const modalTimerId = setTimeout(openModal, 50000)
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
@@ -169,7 +166,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         changeToEuro() {
-            this.price = Math.round(this.price / this.transfer)
+            this.price = (this.price / this.transfer).toFixed(2)
         }
 
         render() {
@@ -214,7 +211,7 @@ window.addEventListener('DOMContentLoaded', () => {
         "img/tabs/post.png",
         "post",
         '"Lenten"',
-        300,
+        320,
         '.menu .container'
     ).render();
 
@@ -225,5 +222,77 @@ window.addEventListener('DOMContentLoaded', () => {
         300,
         '.menu .container'
     ).render();
+
+    //Forms
+
+    const forms = document.querySelectorAll('form');
+    const message = {
+        loading: 'img/form/spinner.svg',
+        success: 'Thanks! We will call you soon',
+        failure: 'Something went wrong...'
+    };
+
+    forms.forEach(item => {
+        postData(item);
+    });
+
+    function postData(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let statusMessage = document.createElement('img');
+            statusMessage.src = message.loading;
+            statusMessage.style.cssText = `
+            display:block;
+            margin: 0 auto;`
+            form.insertAdjacentElement('afterend', statusMessage);
+
+            const formData = new FormData(form);
+
+            const object = {}
+            formData.forEach(function (value, key) {
+                object[key] = value
+            })
+
+            fetch('http://localhost:6544', {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json; charset=utf-8'
+                },
+                body: JSON.stringify(object)
+            })
+                .then(data => data.text())
+                .then((data) => {
+                    showThanksModal(message.success)
+                    statusMessage.textContent = message.success;
+                    statusMessage.remove();
+                }).catch(() => {
+                showThanksModal(message.failure)
+            })
+                .finally(() => form.reset())
+        });
+    }
+
+    function showThanksModal(message) {
+        const prevModal = document.querySelector('.modal__dialog');
+        prevModal.classList.add('hide');
+        openModal();
+        const thanksModal = document.createElement('div')
+        thanksModal.classList.add('modal__dialog')
+        thanksModal.innerHTML = `
+        <div class="modal__content">
+         <div data-close class="modal__close">&times;</div>
+         <h2 class="modal__title">${message}</h2>
+        </div>`;
+
+        document.querySelector('.modal').append(thanksModal)
+        setTimeout(() => {
+            thanksModal.remove()
+            prevModal.classList.add('show')
+            prevModal.classList.remove('hide')
+            closeModal()
+
+        }, 4000)
+    }
 
 })

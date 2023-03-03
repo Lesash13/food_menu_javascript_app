@@ -40,6 +40,16 @@ chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
  python .\server\app\server.py
 ```
 
+#### Start json server:
+allow scripts before:
+```sh
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+```
+then run:
+```sh
+json-server .\db.json 
+``````
+
 #### Open index.html:
 ```
 "Alt+F2"

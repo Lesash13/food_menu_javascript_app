@@ -154,10 +154,11 @@ window.addEventListener('DOMContentLoaded', () => {
     //Small menu items
 
     class MenuCard {
-        constructor(src, alt, title, price, parentSelector, ...classes) {
+        constructor(src, alt, title, description, price, parentSelector, ...classes) {
             this.src = src;
             this.alt = alt;
             this.title = title;
+            this.description = description;
             this.price = price;
             this.classes = classes;
             this.parent = document.querySelector(parentSelector);
@@ -180,6 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
             element.innerHTML = `
                 <img src=${this.src} alt=${this.alt}>
                 <h3 class="menu__item-subtitle">${this.title}</h3>
+                <h5 class="menu__item-descr">${this.description}</h5>
                 <div class="menu__item-divider"></div>
                 <div class="menu__item-price">
                     <div class="menu__item-cost">Cost:</div>
@@ -190,38 +192,22 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    new MenuCard(
-        "img/tabs/vegy.png",
-        "vegy",
-        '"Fitness"',
-        200,
-        '.menu .container',
-        'menu__item'
-    ).render();
+    const getResource = async (url) => {
+        const res = await fetch(url);
 
-    new MenuCard(
-        "img/tabs/meat.png",
-        "elite",
-        '"Premium"',
-        350,
-        '.menu .container'
-    ).render();
+        if (!res.ok) {
+            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+        }
 
-    new MenuCard(
-        "img/tabs/post.png",
-        "post",
-        '"Lenten"',
-        320,
-        '.menu .container'
-    ).render();
+        return await res.json();
+    };
 
-    new MenuCard(
-        "img/tabs/balanced.png",
-        "balanced",
-        '"Balanced"',
-        300,
-        '.menu .container'
-    ).render();
+    getResource('http://localhost:3000/menu')
+        .then(data => {
+            data.forEach(({img, altimg, title, description, price}) => {
+                new MenuCard(img, altimg, title, description, price, '.menu .container').render();
+            })
+        })
 
     //Forms
 
@@ -233,10 +219,22 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     forms.forEach(item => {
-        postData(item);
+        bindPostData(item);
     });
 
-    function postData(form) {
+    const postData = async (url, data) => {
+        const res = await fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json; charset=utf-8'
+            },
+            body: data
+        });
+
+        return await res.json();
+    };
+
+    function bindPostData(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -249,20 +247,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(form);
 
-            const object = {}
-            formData.forEach(function (value, key) {
-                object[key] = value
-            })
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-            fetch('http://localhost:6544', {
-                method: "POST",
-                headers: {
-                    'Content-type': 'application/json; charset=utf-8'
-                },
-                body: JSON.stringify(object)
-            })
-                .then(data => data.text())
-                .then((data) => {
+            postData('http://localhost:3000/requests', json)
+                .then(() => {
                     showThanksModal(message.success)
                     statusMessage.textContent = message.success;
                     statusMessage.remove();
@@ -294,5 +282,56 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }, 4000)
     }
+
+    //Slider
+
+    const slides = document.querySelectorAll('.offer__slide'),
+        prev = document.querySelector('.offer__slider-prev'),
+        next = document.querySelector('.offer__slider-next'),
+        total = document.querySelector('#total'),
+        current = document.querySelector('#current');
+
+
+    let slide_index = 1;
+
+    function showSlides(current_index) {
+        if (current_index > slides.length) {
+            slide_index = 1;
+        }
+        if (current_index < 1) {
+            slide_index = slides.length;
+        }
+
+        slides.forEach(item => {
+            item.style.display = 'none';
+            slides[slide_index - 1].style.display = 'block';
+        })
+
+        if (slides.length < 10) {
+            current.textContent = `0${slide_index}`;
+        } else {
+            current.textContent = `${slide_index}`;
+        }
+    }
+
+    showSlides(slide_index)
+
+    if (slides.length < 10) {
+        total.textContent = `0${slides.length}`;
+    } else {
+        total.textContent = `${slides.length}`;
+    }
+
+    function plusSlides(index) {
+        showSlides(slide_index += index)
+    }
+
+    prev.addEventListener('click', () => {
+        plusSlides(-1)
+    });
+
+    next.addEventListener('click', () => {
+        plusSlides(+1)
+    });
 
 })

@@ -508,14 +508,15 @@ a {
 
 .menu__item-descr {
     margin-top: 20px;
-    padding: 0 20px
+    padding: 0 20px;
+    height: 60px;
 }
 
 .menu__item-divider {
     width: 100%;
     height: 1px;
     background-color: rgba(0, 0, 0, .25);
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 .menu__item-price {
@@ -523,7 +524,8 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    font-size: 26px;
+    font-size: 24px;
+    margin-bottom: 2px;
 }
 
 .menu__item-price span {

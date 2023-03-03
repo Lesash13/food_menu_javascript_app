@@ -459,7 +459,8 @@ a {
 
 
 .calculating__result span {
-    font-size: 42px
+    margin-left: 570px;
+    font-size: 42px;
 }
 
 .menu {

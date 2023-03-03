@@ -2,28 +2,28 @@
   "menu": [
     {
       "img": "img/tabs/vegy.png",
-      "altimg": "vegy",
+      "alt": "vegy",
       "title": "\"Fitness\"",
       "description": "Menu \"Fitness\" is a new approach to cooking: more fresh vegetables and fruits. For people, who are interested in sports and want to be active and healthy. This is a brand new product with the best price and high quality",
       "price": 200
     },
     {
       "img": "img/tabs/meat.png",
-      "altimg": "elite",
+      "alt": "elite",
       "title": "\"Premium\"",
       "description": "Menu “Premium” - we use not only beautiful packaging design, but also high-quality execution dishes. Red fish, seafood, fruits - a restaurant menu without going to a restaurant!",
       "price": 320
     },
     {
       "img": "img/tabs/post.png",
-      "altimg": "post",
+      "alt": "post",
       "title": "\"Lenten\"",
       "description": " Our special \"Lenten Menu\" is a careful selection of ingredients: the complete absence of products animal origin. Complete harmony with yourself and nature in every element! Everything will be Om!",
       "price": 350
     },
     {
       "img": "img/tabs/balanced.png",
-      "altimg": "balanced",
+      "alt": "balanced",
       "title": "\"Balanced\"",
       "description": "The \"Balanced\" menu is the compliance of your diet with all scientific recommendations. We carefully calculate your needs for c / b / w / y and create the best dishes for you.",
       "price": 300

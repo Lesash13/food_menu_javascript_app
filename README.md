@@ -11,8 +11,6 @@ Small javascript project for food delivery menu
 
 * [![Javascript][Javascript.io]][Javascript-url]
 * [![NodeJs][NodeJs.io]][NodeJs-url]
-* [![Babel][Babel.io]][Babel-url]
-
 
 ## Pre-installations
 

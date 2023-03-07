@@ -11,6 +11,7 @@ Small javascript project for food delivery menu
 
 * [![Javascript][Javascript.io]][Javascript-url]
 * [![NodeJs][NodeJs.io]][NodeJs-url]
+* [![WebPack][WebPack.io]][WebPack-url]
 
 ## Pre-installations
 
@@ -73,6 +74,6 @@ http://localhost:63342/food_menu/index.html
 
 [NodeJs-url]: https://nodejs.org/en/
 
-[Babel.io]: https://img.shields.io/badge/-Babel-lightgrey?style=for-the-badge&logo=babel
+[WebPack.io]: https://img.shields.io/badge/-WebPack-blue?style=for-the-badge&logo=webpack
 
-[Babel-url]:https://babeljs.io/
+[WebPack-url]: https://webpack.js.org/

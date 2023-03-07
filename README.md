@@ -3,7 +3,7 @@
 
 # Food menu javascript app
 
-Small javascript project for food delivery menu
+Small native javascript project for food delivery menu
 
 ![food.png](food.png)
 
